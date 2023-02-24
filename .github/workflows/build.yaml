@@ -21,10 +21,10 @@ jobs:
 
     - name: Authenticate Docker
       run: |
-        docker login -u "manojckrishna" -p "${{ secrets.DOCKER_PASSWORD }}" docker.io
+        docker login -u "sanketikahub" -p "${{ secrets.DOCKER_PASSWORD }}" docker.io
 
     
     - name: Build Docker image
       run: |
-        docker build -t manojckrishna/obsrv-api-service:1.0.0 -f Dockerfile .
-        docker push manojckrishna/obsrv-api-service:1.0.0
+        docker build -t sanketikahub/obsrv-api-service:1.0.0 -f Dockerfile .
+        docker push sanketikahub/obsrv-api-service:1.0.0
