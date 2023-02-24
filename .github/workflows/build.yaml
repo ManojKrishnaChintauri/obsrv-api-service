@@ -36,7 +36,7 @@ jobs:
 
     - name: Install api helm chart
       run: |
-        cd helm_charts
+        cd helm_charts/obsrv-api-service
         helm upgrade --install -f  ../env/local/values.yaml obsrv-api . -n obsrv-api-service-local --atomic
 
     #  - name: 'Deploy'
