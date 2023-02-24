@@ -38,10 +38,11 @@ jobs:
       run: |
         ls  
         cd helm_charts/obsrv-api-service/
+        helm upgrade --install obsrv-api . -n obsrv-api-service-local --atomic
     
     - name: Install api helm chart
       run: |
-        helm upgrade --install obsrv-api . -n obsrv-api-service-local --atomic
+        
         
 
     #  - name: 'Deploy'
