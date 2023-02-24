@@ -17,8 +17,14 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
+    
 
-
-    - name: Run docker file
+    - name: Authenticate Docker
       run: |
-        docker run -f Dockerfile
+        docker login -u "manojckrishna" -p "${{ secrets.DOCKER_PASSWORD }}" docker.io
+
+    
+    - name: Build Docker image
+      run: |
+        docker build -t manojckrishna/obsrv-api-service:1.0.0 -f Dockerfile .
+        docker push manojckrishna/obsrv-api-service:1.0.0
