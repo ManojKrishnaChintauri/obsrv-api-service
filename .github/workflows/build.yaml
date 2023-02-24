@@ -36,7 +36,8 @@ jobs:
 
     - name: Install api helm chart
       run: |
-        helm upgrade --install obsrv-api . -n obsrv-api-service-local --atomic
+        cd helm_charts
+        helm upgrade --install -f  ../env/local/values.yaml obsrv-api . -n obsrv-api-service-local --atomic
 
     #  - name: 'Deploy'
     #   uses: bitovi/github-actions-deploy-eks-helm@v1.1.0
