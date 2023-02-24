@@ -32,7 +32,7 @@ jobs:
     - name: Fetch kubeconfig
       run: |
         aws eks --region us-east-2 update-kubeconfig --name obsrv-dev-eks
-
+        kubectl get ns
     #  - name: 'Deploy'
     #   uses: bitovi/github-actions-deploy-eks-helm@v1.1.0
     #   # uses: vimeda/helm@v1.6.8
